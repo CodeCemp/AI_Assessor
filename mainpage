@@ -12,7 +12,7 @@ export default function AIAssessorMockup() {
   const [output, setOutput] = useState("word");
 
   return (
-    <div className="min-h-screen bg-[#f5f5f5] p-6 text-[#2e1a47]">
+    <div className="min-h-screen bg-[#f5f0fa] p-6 text-[#2e1a47]">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export default function AIAssessorMockup() {
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
           <div className="space-y-6 lg:col-span-8">
-            <Card className="rounded-2xl shadow-sm bg-white">
+            <Card className="rounded-2xl shadow-sm">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-xl text-[#4b2c6f]">
                   <Layers className="h-5 w-5 text-[#7a3db8]" />
@@ -48,7 +48,7 @@ export default function AIAssessorMockup() {
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
 
 
-                    <div className=" text-[#000000]">
+                    <div className="space-y-2">
                       <Label>ASPICE Version</Label>
                       <Select defaultValue="4.0">
                         <SelectTrigger className="rounded-xl border-[#d7c7ec]">
@@ -61,7 +61,7 @@ export default function AIAssessorMockup() {
                       </Select>
                     </div>
 
-                    <div className="text-[#000000]">
+                    <div className="space-y-2">
                       <Label>Process Step</Label>
                       <Select>
                         <SelectTrigger className="rounded-xl border-[#d7c7ec]">
@@ -71,44 +71,25 @@ export default function AIAssessorMockup() {
                           <SelectItem value="sys.1">SYS.1 Requirements Elicitation</SelectItem>
                           <SelectItem value="sys.2">SYS.2 System Requirements Analysis</SelectItem>
                           <SelectItem value="sys.3">SYS.3 System Architectural Design</SelectItem>
-                          <SelectItem value="sys.4">SYS.4 System Integration and Integration Varification</SelectItem>
-                          <SelectItem value="sys.5">SYS.5 System Verification</SelectItem>
                           <SelectItem value="swe.1">SWE.1 Software Requirements Analysis</SelectItem>
                           <SelectItem value="swe.2">SWE.2 Software Architectural Design</SelectItem>
                           <SelectItem value="swe.3">SWE.3 Software Detailed Design</SelectItem>
-                          <SelectItem value="swe.4">SWE.4 Software Unit Verification</SelectItem>
-                          <SelectItem value="swe.5">SWE.5 Software Component Verification</SelectItem>
-                          <SelectItem value="swe.6">SWE.6 Software Verification</SelectItem>
-                          
-                          <SelectItem value="sup.1">SUP.1 Quality Assurance</SelectItem>
-                          <SelectItem value="sup.2">SUP.8 Configuration Management</SelectItem>
-                          <SelectItem value="sup.3">SUP.9 Problem Solution Management</SelectItem>
-                          <SelectItem value="sup.4">SUP.10 Change Request Management</SelectItem>
-                          
-                          <SelectItem value="man.1">MAN.3 Project Management</SelectItem>
-                       
                         </SelectContent>
                       </Select>
                     </div>
 
-                    <div className=" text-[#000000]">
+                    <div className="space-y-2">
                       <Label>Gate Number</Label>
                       <Select>
                         <SelectTrigger className="rounded-xl border-[#d7c7ec]">
                           <SelectValue placeholder="Select gate" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="gate-1">Gate 10</SelectItem>
-                          <SelectItem value="gate-2">Gate 20</SelectItem>
-                          <SelectItem value="gate-3">Gate 30</SelectItem>
-                          <SelectItem value="gate-4">Gate 40</SelectItem>
-                          <SelectItem value="gate-5">Gate 50</SelectItem>
-                          <SelectItem value="gate-6">Gate 60</SelectItem>
-                          <SelectItem value="gate-7">Gate 70</SelectItem>
-                          <SelectItem value="gate-8">Gate 80</SelectItem>
-                          <SelectItem value="gate-9">Gate 90</SelectItem>
-                          <SelectItem value="gate-10">Gate 100</SelectItem>
-                          <SelectItem value="gate-11">Gate 110</SelectItem>                          
+                          <SelectItem value="gate-1">Gate 1</SelectItem>
+                          <SelectItem value="gate-2">Gate 2</SelectItem>
+                          <SelectItem value="gate-3">Gate 3</SelectItem>
+                          <SelectItem value="gate-4">Gate 4</SelectItem>
+                          <SelectItem value="gate-5">Gate 5</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -119,64 +100,38 @@ export default function AIAssessorMockup() {
 
                 <div className="h-px bg-[#e4d8f3]" />
                 <section>
-                  <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-[#8a6bbf]">
-                    Connected Sources
-                  </h2>
-                
-                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2 items-start">
-                
-                    {/* Confluence */}
+                  <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-[#8a6bbf]">Connected Sources</h2>
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <div className="space-y-2">
-                      <Label className="flex items-center gap-2 min-h-[22px] text-[#000000]">
-                        <LinkIcon className="h-4 w-4 text-[#7a3db8]" />
-                        Confluence Space Link
-                      </Label>
+                      <Label className="flex items-center gap-2"><LinkIcon className="h-4 w-4 text-[#7a3db8]" /> Confluence Space Link</Label>
                       <Input className="rounded-xl border-[#d7c7ec]" placeholder="https://confluence.company.com/spaces/..." />
                     </div>
-                
-                    {/* Jira Project Name */}
+
                     <div className="space-y-2">
-                      <Label className="flex items-center gap-2 min-h-[22px] text-[#000000]">
-                        <FileText className="w-4 h-4 text-[#7a3db8]" /> 
-                        Jira Project Name
-                      </Label>
+                      <Label>Jira Project Name</Label>
                       <Input className="rounded-xl border-[#d7c7ec]" placeholder="e.g., ASPICE-ASSESSMENT" />
                     </div>
-                
-                    {/* Jira Link */}
+
                     <div className="space-y-2">
-                      <Label className="flex items-center gap-2 min-h-[22px] text-[#000000]">
-                        <LinkIcon className="h-4 w-4 text-[#7a3db8]" />
-                        Jira Page Link
-                      </Label>
+                      <Label className="flex items-center gap-2"><LinkIcon className="h-4 w-4 text-[#7a3db8]" /> Jira Page Link</Label>
                       <Input className="rounded-xl border-[#d7c7ec]" placeholder="https://jira.company.com/browse/..." />
                     </div>
-                
-                    {/* GitHub */}
+
                     <div className="space-y-2">
-                      <Label className="flex items-center gap-2 min-h-[22px] text-[#000000]">
-                        <Github className="h-4 w-4 text-[#7a3db8]" />
-                        GitHub Repository
-                      </Label>
+                      <Label className="flex items-center gap-2"><Github className="h-4 w-4 text-[#7a3db8]" /> GitHub Repository</Label>
                       <Input className="rounded-xl border-[#d7c7ec]" placeholder="https://github.com/org/repository" />
                     </div>
-                
-                    {/* DOORS (full width) */}
+
                     <div className="space-y-2 md:col-span-2">
-                      <Label className="flex items-center gap-2 min-h-[22px] text-[#000000]">
-                        <Database className="h-4 w-4 text-[#7a3db8]" />
-                        DOORS Reference
-                      </Label>
+                      <Label className="flex items-center gap-2"><Database className="h-4 w-4 text-[#7a3db8]" /> DOORS Reference</Label>
                       <Input className="rounded-xl border-[#d7c7ec]" placeholder="DOORS module, project path, baseline, or link" />
                     </div>
-                
                   </div>
                 </section>
-
               </CardContent>
             </Card>
 
-            <Card className="rounded-2xl shadow-sm bg-white space-y-6">
+            <Card className="rounded-2xl shadow-sm">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-xl text-[#4b2c6f]">
                   <FileText className="h-5 w-5 text-[#7a3db8]" />
@@ -195,7 +150,7 @@ export default function AIAssessorMockup() {
                       <div className="flex items-center gap-3">
                         <FileText className="h-6 w-6 text-[#7a3db8]" />
                         <div>
-                          <p className="font-semibold text-[#000000]">Word Document</p>
+                          <p className="font-semibold">Word Document</p>
                           <p className="text-sm text-[#6b4a8c]">Detailed assessment report</p>
                         </div>
                       </div>
@@ -211,7 +166,7 @@ export default function AIAssessorMockup() {
                       <div className="flex items-center gap-3">
                         <Presentation className="h-6 w-6 text-[#b05cd6]" />
                         <div>
-                          <p className="font-semibold text-[#000000]">PowerPoint Presentation</p>
+                          <p className="font-semibold">PowerPoint Presentation</p>
                           <p className="text-sm text-[#6b4a8c]">Management summary deck</p>
                         </div>
                       </div>
@@ -224,7 +179,7 @@ export default function AIAssessorMockup() {
           </div>
 
           <div className="lg:col-span-4">
-            <Card className="h-full rounded-2xl shadow-sm bg-white">
+            <Card className="h-full rounded-2xl shadow-sm">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-xl text-[#4b2c6f]">
                   <UploadCloud className="h-5 w-5 text-[#7a3db8]" />
